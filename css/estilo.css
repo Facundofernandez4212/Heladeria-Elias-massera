@@ -1,0 +1,108 @@
+/* Estilos globales */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-image: url('../medios/heladeria_real.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+}
+
+/* Estilos del encabezado */
+.bg-pink {
+    background-color: #fa799f;
+}
+
+.navbar {
+    padding: 0.5rem 1rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white; /* Asegura que los enlaces sean blancos */
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+    color: #d1eaff; /* Cambia el color al pasar el mouse o seleccionar */
+    text-decoration: none;
+}
+
+.navbar-light .navbar-toggler {
+    color: white;
+    border-color: white; /* Asegura que el icono del toggler también sea blanco */
+}
+
+.login .btn {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.login .btn:hover {
+    background-color: #fa799f;
+    color: white;
+    border-color: #fa799f;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+        justify-content: center; /* Centra los menús excepto Iniciar Sesión */
+    }
+
+    .navbar-expand-lg .login .btn {
+        position: static;
+        margin-left: auto; /* Coloca Iniciar Sesión a la derecha */
+    }
+
+    .logo-container {
+        display: none; /* Oculta el logo en desktop */
+    }
+}
+
+/* Estilos para secciones y footer */
+section {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para formularios y botones */
+form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #fa799f;
+    border-color: #fa799f;
+}
+
+.btn-primary:hover {
+    background-color: #f05c8f;
+    border-color: #f05c8f;
+}
+
