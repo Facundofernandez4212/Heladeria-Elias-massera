@@ -21,7 +21,7 @@ body, html {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: white; /* Asegura que los enlaces sean blancos */
+    color: white;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
@@ -47,40 +47,84 @@ body, html {
     border-color: #fa799f;
 }
 
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #030303;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    padding: 20px 25px;
+    display: block; /* Asegura que el título ocupe toda la línea */
+    text-align: center; /* Centra el texto dentro del h1 */
+    margin: 30px auto; /* Centra el h1 horizontalmente */
+    width: fit-content; /* Ajusta el ancho al contenido */
+}
+
+/* Ajustes en el navbar para pantallas grandes */
 @media (min-width: 992px) {
     .navbar-expand-lg {
-        justify-content: space-between; /* Asegura espacio entre elementos */
+        justify-content: space-between;
     }
 
     .navbar-expand-lg .navbar-nav {
-        flex-grow: 1; /* Permite que el navbar-nav crezca para utilizar todo el espacio disponible */
-        justify-content: center; /* Centra los elementos del menú */
+        flex-grow: 1;
+        justify-content: center;
     }
 
     .navbar-expand-lg .login {
-        margin-left: auto; /* Coloca Iniciar Sesión a la derecha */
+        margin-left: auto;
     }
 }
 
-/* Estilos para secciones y footer */
+/* Estilos mejorados para secciones */
 section {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo más sólido */
+    padding: 35px;
+    margin-bottom: 40px; /* Más espacio entre secciones */
+    border-radius: 12px;
+    border: 2px solid rgba(0, 0, 0, 0.1); /* Borde más notable */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más grande */
     text-align: center;
 }
 
+/* Ajustes de texto en secciones */
+section p {
+    font-size: 1.2rem; /* Aumenta el tamaño del texto */
+    color: #333;
+    line-height: 1.8;
+}
+
+/* Estilos para el footer */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px;
-    position: fixed;
-    bottom: 0;
+    position: static; /* Cambiado de fixed a static */
     width: 100%;
+    margin-top: 20px; /* Espacio adicional encima del footer */
 }
 
+/* Estilos para el contenedor del mapa */
+.map-container {
+    background-color: #fa799f; /* Fondo blanco con mayor opacidad */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px 8px 16px rgb(11, 11, 11); /* Sombra más visible */
+    border: 2px solid #0d0d0d; /* Borde más notorio */
+    max-width: 600px; /* Ancho máximo del mapa */
+    margin: 20px auto; /* Centrado y margen superior */
+}
+
+/* Ajustes para el iframe del mapa */
+.map-container iframe {
+    border-radius: 10px; /* Bordes redondeados del mapa */
+    width: 100%; /* Asegura que el mapa ocupe todo el ancho del contenedor */
+    height: 400px; /* Altura fija del mapa */
+    border: none; /* Quita el borde predeterminado del iframe */
+}
 /* Estilos para formularios y botones */
 form {
     max-width: 600px;
