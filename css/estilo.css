@@ -128,4 +128,9 @@ form {
   border-color: #f05c8f;
 }
 
+.carousel-item img {
+  width: 100%;
+  height: 700px; /* Puedes ajustar la altura según necesites */
+  object-fit: cover; /* Esto recorta la imagen sin deformarla */
+}
 /*# sourceMappingURL=estilo.css.map */
