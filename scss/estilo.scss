@@ -4,7 +4,6 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-image: url('../medios/heladeria_real.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -12,30 +11,54 @@ body, html {
     color: #333;
 }
 
+// Importa la fuente Fiorina Text Semi Bold
+@font-face {
+    font-family: 'Fiorina Text';
+    src: url('./fonts/FiorinaText-SemiBold.woff2') format('woff2'),
+         url('./fonts/FiorinaText-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
 // Navbar
 .bg-pink {
-    background-color: #fa799f;
+    background-color: #F8E8E8;
 }
 
 .navbar {
     padding: 0.5rem 1rem;
+    font-family: 'Fiorina Text', serif; /* Aplica la fuente a todo el navbar */
+}
+
+.navbar-text {
+    font-size: 3rem; /* Tamaño del texto 'Elias Massera' */
+    font-weight: 600;
+    color: #DE306D; /* Mismo color que los enlaces */
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: white;
+    color: #DE306D;
+    font-size: 1.5rem; /* Aumenta el tamaño de fuente de los enlaces de navegación */
+    font-weight: 600; /* Hace que el texto sea un poco más grueso */
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link:focus {
-    color: #d1eaff;
-    text-decoration: none;
+    color: #DE306D; /* Rosa más intenso al pasar el mouse */
+    text-decoration: underline; /* Añade subrayado cuando pases el mouse */
+    font-size: 1.6rem; /* Aumenta ligeramente el tamaño al pasar el mouse */
 }
 
 .navbar-light .navbar-toggler {
-    color: white;
-    border-color: white;
+    color: #DE306D;
+    border-color: #DE306D;
 }
 
+
+
+.navbar-brand img {
+    height: 85px; /* Ajusta la altura para que el nav no se expanda */
+}
 // Header Button
 .login .btn {
     color: white;
@@ -44,9 +67,9 @@ body, html {
 }
 
 .login .btn:hover {
-    background-color: #fa799f;
+    background-color: #DE306D;
     color: white;
-    border-color: #fa799f;
+    border-color: #DE306D;
 }
 
 // Header for large screens
@@ -84,8 +107,7 @@ h1 {
 section {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 35px;
-    margin-bottom: 40px;
-    border-radius: 12px;
+    
     border: 2px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -104,7 +126,7 @@ footer {
 
 // Map Container
 .map-container {
-    background-color: #fa799f;
+    background-color: #DE306D;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0px 8px 16px rgb(11, 11, 11);
@@ -131,11 +153,111 @@ form {
 }
 
 .btn-primary {
-    background-color: #fa799f;
-    border-color: #fa799f;
+    background-color: #DE306D;
+    border-color: #DE306D;
 }
 
 .btn-primary:hover {
     background-color: #f05c8f;
     border-color: #f05c8f;
+}
+
+//section debajo del banner
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-text {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    font-weight: 700;
+}
+
+.btn-custom {
+    background-color: #DE306D; // Color rosa 
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    &:hover {
+        background-color: #f05c8f; // Color más oscuro al pasar el mouse
+    }
+}
+
+
+
+// Sección de pedidos en moto en la home
+
+.position-relative {
+    position: relative;
+}
+
+.overlay-text-left {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    background-color:#DE306D; // Fondo rosa semi-transparente
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: left;
+
+    // Ajustes para pantallas pequeñas
+    @media (max-width: 576px) {
+        top: 10%; // Ajusta la posición en móviles
+        left: 50%;
+        transform: translate(-50%, 0); // Centra horizontalmente en móviles
+        width: 90%; // Ocupa el 90% del ancho en móviles
+        max-width: none; // Sin límite de ancho en móviles
+        padding: 1.5rem; // Reducir padding en móviles
+        text-align: center; // Centrar el texto
+    }
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    @media (max-width: 576px) {
+        font-size: 1.5rem;
+    }
+}
+
+.section-text {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+
+    @media (max-width: 576px) {
+        font-size: 0.9rem;
+    }
+}
+
+.btn-custom {
+    background-color: #DE306D;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #DE306D;
+    }
+
+    @media (max-width: 576px) {
+        align-self: center;
+    }
 }
