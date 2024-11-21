@@ -1,0 +1,32 @@
+.btn-primary {
+    background-color: #DE306D;
+    border-color: #DE306D;
+}
+
+.btn-primary:hover {
+    background-color: #f05c8f;
+    border-color: #f05c8f;
+}
+
+.btn-custom {
+    background-color: #DE306D;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+        background-color: #b02455;
+    }
+}
+
+.btn-termina-pedido {
+    @extend .btn-custom;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}

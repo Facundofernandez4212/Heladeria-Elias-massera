@@ -1,0 +1,97 @@
+h1 {
+    font-family: 'Alternate Gothic Cond ATF Bold', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #DE306D; // Color principal
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.btn-pink {
+    background-color: #DE306D; // Color principal
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #b52556; // Color más oscuro directamente
+    }
+}
+
+.formulario {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formulario input {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.formulario label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+.foter {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+.link-pink {
+    color: #DE306D; // Color rosa principal
+    font-weight: bold; // Negrita
+    text-decoration: none; // Elimina el subrayado del enlace
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #b52556; // Color más oscuro en hover
+    }
+}
+
+// Para celulares (pantallas más pequeñas)
+@media (max-width: 576px) {
+    
+
+    h1 {
+        font-size: 2rem; // Ajuste del tamaño del título
+        text-align: center; // Centra el título para mejor visualización
+        margin-bottom: 20px;
+    }
+
+    .formulario {
+        padding: 15px; // Reduce el padding del formulario
+        border-radius: 8px; // Suaviza los bordes
+        box-shadow: none; // Elimina sombras innecesarias en pantallas pequeñas
+    }
+
+    .formulario input {
+        font-size: 0.9rem; // Reduce ligeramente el tamaño del texto
+    }
+
+    .btn-pink {
+        padding: 10px; // Botón más compacto
+        font-size: 1rem; // Ajuste del texto del botón
+    }
+}
+

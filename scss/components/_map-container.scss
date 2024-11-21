@@ -1,0 +1,17 @@
+// _map-container.scss
+.map-container {
+    background-color: #DE306D;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgb(11, 11, 11);
+    border: 2px solid #0d0d0d;
+    max-width: 600px;
+    margin: 20px auto;
+
+    iframe {
+        border-radius: 10px;
+        width: 100%;
+        height: 400px;
+        border: none;
+    }
+}

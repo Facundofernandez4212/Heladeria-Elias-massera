@@ -1,0 +1,51 @@
+// section puntos massera (final del index)
+.puntos-massera {
+    padding: 40px 0;
+    font-family: 'Alternate Gothic Cond ATF Bold', sans-serif; /* Asegúrate de que la fuente esté aplicada */
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+
+    .text-section {
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333; /* Texto en un tono gris */
+            font-weight: normal;
+            margin-bottom: 15px; /* Añadido para espacio entre párrafos */
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px; /* Para esquinas redondeadas */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        margin-bottom: 20px; /* Añadido para espacio debajo de la imagen */
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px 10px; /* Ajuste de padding para móvil */
+
+        .text-section {
+            h2 {
+                font-size: 1.8rem; /* Reducir tamaño para móvil */
+                margin-bottom: 15px; /* Espaciado extra entre título y texto */
+            }
+
+            p {
+                margin-bottom: 20px; /* Más espacio entre los párrafos en móvil */
+            }
+        }
+
+        img {
+            margin-bottom: 30px; /* Espacio adicional para separar imagen del texto */
+        }
+    }
+}

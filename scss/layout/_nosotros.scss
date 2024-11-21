@@ -1,0 +1,460 @@
+.nosotros-page h1 {
+    background-image: url(../medios/nosotrosh1copia.png); /* Imagen de fondo */
+}
+
+/* Márgenes uniformes para ambas secciones */
+.historia-wrapper, .calidad-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Sección de Nosotros */
+.historia-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    box-sizing: border-box;
+    margin-bottom: 130px;
+}
+
+.historia {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 50px 0;
+    gap: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.historia .content {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.historia h2, .local-content h2 {
+    font-family: 'Alternate Gothic Cond ATF Bold', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #DE306D;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.historia h3, .local-content h3 {
+    font-family: 'Alternate Gothic Cond ATF Bold', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.historia p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    text-align: left;
+}
+
+.historia .imagen {
+    flex: 1;
+    max-width: 45%;
+    margin-left: auto;
+}
+
+.historia .imagen img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Sección de Calidad */
+.calidad-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    text-align: center;
+    margin-bottom: 130px;
+}
+
+.calidad-item {
+    flex: 1;
+    max-width: 30%;
+    padding: 10px;
+}
+
+.calidad-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.calidad-item h3 {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #DE306D;
+    margin-bottom: 10px;
+}
+
+.calidad-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Sección Local */
+.nuestro-local {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+
+    .local-wrapper {
+        display: flex;
+        flex-direction: row;
+        max-width: 1200px;
+        width: 100%;
+        gap: 30px;
+    }
+
+    #carrusel-local {
+        flex: 1;
+        max-width: 50%;
+
+        .carousel-inner img {
+            border-radius: 10px;
+        }
+    }
+
+    .local-content {
+        flex: 1;
+        text-align: left;
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+/* Sección Ubicación */
+.ubicacion {
+    padding: 50px 20px;
+    margin-bottom: 100px;
+
+    .ubicacion-wrapper {
+        display: flex;
+        flex-direction: row;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .ubicacion-content {
+        flex: 1;
+        text-align: left;
+
+        h2 {
+            font-family: 'Alternate Gothic Cond ATF Bold', sans-serif;
+            font-size: 2.4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #DE306D;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-family: 'Alternate Gothic Cond ATF Bold', sans-serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 10px;
+        }
+    }
+
+    .ubicacion-mapa {
+        flex: 1;
+        max-width: 50%;
+
+        iframe {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustes generales para secciones */
+    .historia-wrapper, .calidad-contenido, .nuestro-local, .ubicacion {
+        margin: 0 auto; /* Centra las secciones */
+        padding: 20px 10px; /* Márgenes internos más pequeños */
+        max-width: 100%; /* Asegura que ocupe el ancho disponible */
+    }
+
+    /* Ajuste para márgenes entre secciones */
+    .historia, .calidad-contenido, .nuestro-local, .ubicacion {
+        flex-direction: column; /* Asegura disposición en columna */
+        align-items: center; /* Centra contenido horizontalmente */
+        margin-bottom: 30px; /* Reduce el espacio entre secciones */
+        text-align: center; /* Centra el texto */
+    }
+
+    /* Ajustes de texto */
+    h2, .local-content h2, .ubicacion-content h2 {
+        font-size: 1.8rem; /* Tamaño de fuente más pequeño */
+        text-align: center; /* Centra los títulos */
+    }
+
+    h3, .local-content h3, .ubicacion-content h3 {
+        font-size: 1.4rem; /* Tamaño de subtítulos más pequeño */
+        text-align: center; /* Centra los subtítulos */
+    }
+
+    p, .local-content p, .ubicacion-content p {
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center; /* Centra los párrafos */
+    }
+
+    /* Ajuste para la sección de historia */
+    .historia {
+        flex-direction: column; /* Disposición en columna */
+        gap: 20px; /* Espaciado entre texto e imagen */
+    }
+
+    .historia .content {
+        padding-right: 0; /* Elimina el espaciado lateral */
+    }
+
+    .historia .imagen {
+        max-width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+        margin: 0 auto; /* Centra la imagen */
+    }
+
+    .historia .imagen img {
+        width: 100%; /* Imagen ocupa el ancho disponible */
+        height: auto; /* Mantiene la proporción */
+        border-radius: 10px; /* Bordes redondeados */
+    }
+
+    /* Ajuste para el carrusel */
+    /* Ajuste para el carrusel */
+    #carrusel-local {
+        max-width: 100%; /* Asegura que no desborde en mobile */
+        margin: 0 auto; /* Centra el carrusel */
+        overflow: hidden; /* Evita cualquier desbordamiento de las imágenes */
+    }
+
+    #carrusel-local .carousel-inner {
+        height: 300px; /* Altura fija para el carrusel */
+    }
+
+    #carrusel-local .carousel-inner img {
+        width: 100%; /* Asegura que las imágenes ocupen todo el ancho */
+        height: 300px; /* Mantiene una altura fija */
+        object-fit: cover; /* Recorta la imagen si es necesario para llenar el espacio */
+        border-radius: 10px; /* Bordes redondeados */
+    }
+
+    #carrusel-local .carousel-item {
+        height: 300px; /* Altura consistente para cada imagen del carrusel */
+        display: flex; /* Asegura que las imágenes estén centradas */
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+    }
+
+   
+
+    /* Evita cualquier distorsión en el cambio de imágenes */
+    #carrusel-local .carousel-inner {
+        transition: transform 0.5s ease-in-out; /* Transición suave entre imágenes */
+    }
+
+    /* Ajuste para la sección de ubicación */
+    .ubicacion-wrapper {
+        flex-direction: column; /* Cambia a disposición vertical */
+        text-align: center;
+    }
+
+    .ubicacion-content {
+        text-align: center;
+    }
+
+    .ubicacion-mapa iframe {
+        width: 100%; /* Asegura que el mapa ocupe todo el ancho disponible */
+        height: 250px; /* Altura fija para el mapa */
+        border-radius: 10px; /* Mantiene los bordes redondeados */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        margin-top: 20px; /* Espaciado superior */
+    }
+
+    /* Ajuste para la sección de calidad */
+    .calidad-contenido {
+        flex-direction: column; /* Cambia a disposición vertical */
+        gap: 20px; /* Espaciado entre columnas */
+    }
+
+    .calidad-item {
+        max-width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+    }
+
+    /* Ajuste para Nuestro Local */
+    .nuestro-local .local-wrapper {
+        flex-direction: column; /* Asegura disposición en columna */
+        gap: 20px; /* Espaciado entre los elementos */
+    }
+
+    .local-content {
+        text-align: center; /* Centra texto */
+    }
+
+    /* Ajustes generales de espaciado y márgenes */
+    section {
+        margin-bottom: 20px; /* Reduce espacio entre secciones */
+    }
+}
+
+//responsive tablet
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Ajustes generales para tablet */
+    .historia-wrapper, .calidad-contenido, .nuestro-local, .ubicacion {
+        margin: 0 auto; /* Centra las secciones */
+        padding: 30px 20px; /* Ajusta los márgenes internos */
+        max-width: 100%; /* Asegura que ocupe el ancho disponible */
+    }
+
+    /* Márgenes entre secciones */
+    .historia, .calidad-contenido, .nuestro-local, .ubicacion {
+        margin-bottom: 50px; /* Espaciado uniforme entre secciones */
+    }
+
+    /* Ajustes de texto */
+    h2, .local-content h2, .ubicacion-content h2 {
+        font-size: 2.5rem; /* Tamaño de fuente más grande para tablet */
+        text-align: center; /* Centra los títulos */
+    }
+
+    h3, .local-content h3, .ubicacion-content h3 {
+        font-size: 1.8rem; /* Tamaño de subtítulos optimizado */
+        text-align: center; /* Centra los subtítulos */
+    }
+
+    p, .local-content p, .ubicacion-content p {
+        font-size: 1.2rem; /* Aumenta ligeramente el tamaño del texto */
+        line-height: 1.6; /* Mejora la legibilidad */
+        text-align: center; /* Centra los párrafos */
+    }
+
+    /* Sección de Historia */
+    .historia {
+        flex-direction: column; /* Disposición en columna */
+        gap: 30px; /* Espaciado entre texto e imagen */
+        text-align: center;
+    }
+
+    .historia .content {
+        padding-right: 0; /* Elimina el espaciado lateral */
+        text-align: center;
+    }
+
+    .historia .imagen {
+        max-width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+        margin: 0 auto; /* Centra la imagen */
+    }
+
+    .historia .imagen img {
+        width: 100%; /* Imagen ocupa el ancho disponible */
+        height: auto; /* Mantiene la proporción */
+        border-radius: 10px; /* Bordes redondeados */
+    }
+
+    /* Sección del carrusel */
+    #carrusel-local {
+        max-width: 90%; /* Ocupa el 90% del ancho en tablet */
+        margin: 0 auto; /* Centra el carrusel */
+        overflow: hidden; /* Evita cualquier desbordamiento de las imágenes */
+    }
+
+    #carrusel-local .carousel-inner {
+        height: 350px; /* Altura fija para el carrusel */
+    }
+
+    #carrusel-local .carousel-inner img {
+        width: 100%; /* Asegura que las imágenes ocupen todo el ancho */
+        height: 350px; /* Mantiene una altura fija */
+        object-fit: cover; /* Recorta la imagen si es necesario */
+        border-radius: 10px; /* Bordes redondeados */
+    }
+
+    #carrusel-local .carousel-item {
+        height: 350px; /* Altura consistente para cada imagen */
+        display: flex; /* Asegura que las imágenes estén centradas */
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+    }
+
+   
+
+    /* Sección Ubicación */
+    .ubicacion-wrapper {
+        flex-direction: column; /* Cambia a disposición vertical */
+        text-align: center;
+    }
+
+    .ubicacion-content {
+        text-align: center;
+    }
+
+    .ubicacion-mapa iframe {
+        width: 100%; /* Asegura que el mapa ocupe todo el ancho disponible */
+        height: 300px; /* Altura fija para el mapa */
+        border-radius: 10px; /* Mantiene los bordes redondeados */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        margin-top: 20px; /* Espaciado superior */
+    }
+
+    /* Sección de Calidad */
+    .calidad-contenido {
+        flex-direction: row; /* Cambia a disposición en filas */
+        flex-wrap: wrap; /* Asegura que los ítems se distribuyan en filas múltiples si es necesario */
+        justify-content: space-between; /* Distribución uniforme */
+        gap: 20px; /* Espaciado entre columnas */
+    }
+
+    .calidad-item {
+        max-width: 48%; /* Cada ítem ocupa aproximadamente la mitad del ancho */
+        margin-bottom: 20px; /* Espaciado inferior entre ítems */
+    }
+
+    .calidad-item img {
+        margin: 0 auto; /* Centra imagen */
+    }
+
+    /* Ajuste adicional para el footer */
+    footer {
+        text-align: center; /* Centra el contenido del footer */
+        padding: 30px 20px; /* Espaciado interno */
+        font-size: 1rem; /* Tamaño de fuente estándar */
+    }
+}

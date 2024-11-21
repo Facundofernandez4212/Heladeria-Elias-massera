@@ -1,154 +1,157 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedido Online - Heladería Elías Massera</title>
+    <title>Pedido Online - Elias Massera</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilo.css">
     <link rel="icon" href="../medios/Fondo de cucurucho eliminado.png">
 </head>
 <body>
-<header class="bg-pink text-white">
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="../medios/Fondo de cucurucho eliminado.png" alt="Logo Heladería Elías Massera" height="60">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a href="../index.html" class="nav-link">Inicio</a></li>
-                    <li class="nav-item"><a href="pedido_online.html" class="nav-link">Pedidos</a></li>
-                    <li class="nav-item"><a href="nosotros.html" class="nav-link">Nosotros</a></li>
-                    <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
-                    <li class="nav-item d-lg-none"><a href="iniciar_sesion.html" class="nav-link">Iniciar Sesión</a></li>
-                </ul>
-            </div>
-            <a href="iniciar_sesion.html" class="btn btn-light d-none d-lg-block">Iniciar Sesión</a>
-        </div>
-    </nav>
-</header>
-
-<main class="container mt-5">
-    <h1 class="text-center">Realiza tu pedido online</h1>
-    <div class="bg-light p-4 rounded">
-        <form action="/submit_order" method="post">
-            <!-- Selección de peso y cantidad de potes -->
-            <h2>Envases</h2>
-            <div class="mb-3">
-                <label class="form-label">1 kg:</label>
-                <div class="input-group">
-                    <button class="btn btn-outline-secondary decrement" type="button" data-target="peso1kg">-</button>
-                    <input type="number" class="form-control" name="peso1kg" id="peso1kg" value="0" min="0" readonly>
-                    <button class="btn btn-outline-secondary increment" type="button" data-target="peso1kg">+</button>
-                </div>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">1/2 kg:</label>
-                <div class="input-group">
-                    <button class="btn btn-outline-secondary decrement" type="button" data-target="peso1_2kg">-</button>
-                    <input type="number" class="form-control" name="peso1_2kg" id="peso1_2kg" value="0" min="0" readonly>
-                    <button class="btn btn-outline-secondary increment" type="button" data-target="peso1_2kg">+</button>
-                </div>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">1/4 kg:</label>
-                <div class="input-group">
-                    <button class="btn btn-outline-secondary decrement" type="button" data-target="peso1_4kg">-</button>
-                    <input type="number" class="form-control" name="peso1_4kg" id="peso1_4kg" value="0" min="0" readonly>
-                    <button class="btn btn-outline-secondary increment" type="button" data-target="peso1_4kg">+</button>
-                </div>
-            </div>
-            <!-- Botón para avanzar a la selección de gustos -->
-            <button type="button" class="btn btn-primary mt-3" id="continueToGustos">Elegir Gustos</button>
-
-            <!-- Sección de selección de gustos por pote -->
-            <div id="gustosSection" class="mt-5" style="display: none;">
-                <h2>Elige tus gustos para cada pote</h2>
-                <div id="gustosContainer"></div>
-                <button type="button" class="btn btn-secondary mt-3" id="continueToAdicionales">Elegir Adicionales</button>
-            </div>
-
-            <!-- Sección de adicionales -->
-            <div id="adicionalesSection" class="mt-5" style="display: none;">
-                <h2>Vas a querer adicionales en tu pedido?</h2>
-                <div class="mb-3">
-                    <label class="form-label">Cucuruchos:</label>
-                    <div class="input-group">
-                        <button class="btn btn-outline-secondary decrement" type="button" data-target="cucuruchos">-</button>
-                        <input type="number" class="form-control" name="cucuruchos" id="cucuruchos" value="0" min="0" readonly>
-                        <button class="btn btn-outline-secondary increment" type="button" data-target="cucuruchos">+</button>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Vasitos comestibles:</label>
-                    <div class="input-group">
-                        <button class="btn btn-outline-secondary decrement" type="button" data-target="vasitos">-</button>
-                        <input type="number" class="form-control" name="vasitos" id="vasitos" value="0" min="0" readonly>
-                        <button class="btn btn-outline-secondary increment" type="button" data-target="vasitos">+</button>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Baño de chocolate (indicar en aclaraciones en qué pote):</label>
-                    <div class="input-group">
-                        <button class="btn btn-outline-secondary decrement" type="button" data-target="banoChocolate">-</button>
-                        <input type="number" class="form-control" name="banoChocolate" id="banoChocolate" value="0" min="0" readonly>
-                        <button class="btn btn-outline-secondary increment" type="button" data-target="banoChocolate">+</button>
-                    </div>
-                </div>
-                <div class="mb-3 mt-4">
-                    <label for="aclaraciones" class="form-label">Aclaraciones:</label>
-                    <textarea id="aclaraciones" name="aclaraciones" class="form-control" rows="4" placeholder="Especifica cualquier detalle adicional, como en qué pote aplicar el baño de chocolate."></textarea>
-                </div>
-            </div>
-
-            <div class="mt-5">
-                <h2>Dirección de entrega:</h2>
-                
-                <!-- Selección de Barrio -->
-                <div class="mb-3">
-                    <label class="form-label">Barrio:</label>
-                    <select class="form-select" name="barrio" id="barrio">
-                        <option value="Villa Ballester">Villa Ballester</option>
-                        <option value="Malaver">Malaver</option>
-                        <option value="San Andres">San Andres</option>
-                        <option value="Chilavert">Chilavert</option>
-                        <option value="San Martin">San Martin</option>
-                    </select>
-                </div>
-            
-                <!-- Selección de Calle -->
-                <div class="mb-3">
-                    <label class="form-label">Calle:</label>
-                    <select class="form-select" name="calle" id="calle">
-                        <option value="Independencia">Independencia</option>
-                        <option value="Marengo">Marengo</option>
-                        <option value="Pueyrredon">Pueyrredon</option>
-                        <option value="Alvear">Alvear</option>
-                    </select>
-                </div>
-            
-                <!-- Campo de Altura -->
-                <div class="mb-3">
-                    <label for="altura" class="form-label">Altura:</label>
-                    <input type="text" class="form-control" id="altura" name="altura" placeholder="Ej. 1234">
-                </div>
-            
-                <!-- Campo de Aclaraciones de Entrega -->
-                <div class="mb-3">
-                    <label for="aclaracionesEntrega" class="form-label">Aclaraciones de la entrega:</label>
-                    <textarea id="aclaracionesEntrega" name="aclaracionesEntrega" class="form-control" rows="3" placeholder="Indique cualquier información adicional de entrega, piso 4 B, etc."></textarea>
-                </div>
-                
-                <!-- Botón de pago MercadoPago -->
-                <button type="submit" class="btn w-100 d-flex align-items-center justify-content-center" style="background-color: #00aaff; color: white;">
-                    <img src="https://img.icons8.com/color/48/mercado-pago.png" alt="Logo de Mercado Pago" style="width: 24px; height: 24px; margin-right: 8px;">
-                    MERCADOPAGO
+    <header class="bg-pink text-white">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <span class="navbar-text">Elias Massera</span>
+                    <img src="../medios/Fondo de cucurucho eliminado.png" alt="Logo Heladería Elías Massera">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="pedido_online.html" class="nav-link">Pedido</a></li>
+                        <li class="nav-item"><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                        <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
+                        <li class="nav-item d-lg-none"><a href="iniciar_sesion.html" class="nav-link">Iniciar Sesión</a></li>
+                    </ul>
+                </div>
+                <a href="iniciar_sesion.html" class="btn btn-light d-none d-lg-block">Iniciar Sesión</a>
             </div>
+        </nav>
+    </header>
+
+<main class="pedido-page">
+    <h1>Pedido</h1>
+    <div class="pedido-wrapper">
+        <form action="/submit_order" method="post" class="pedido-form">
+            <!-- Selección de peso y cantidad de potes -->
+            <section class="pedido-section envases-section">
+                <h2>ENVASES</h2>
+                <div class="mb-3">
+                    <label class="form-label">1 kg:</label>
+                    <div class="input-group">
+                        <button class="btn btn-outline-secondary decrement" type="button" data-target="peso1kg">-</button>
+                        <input type="number" class="form-control" name="peso1kg" id="peso1kg" value="0" min="0" readonly>
+                        <button class="btn btn-outline-secondary increment" type="button" data-target="peso1kg">+</button>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">1/2 kg:</label>
+                    <div class="input-group">
+                        <button class="btn btn-outline-secondary decrement" type="button" data-target="peso1_2kg">-</button>
+                        <input type="number" class="form-control" name="peso1_2kg" id="peso1_2kg" value="0" min="0" readonly>
+                        <button class="btn btn-outline-secondary increment" type="button" data-target="peso1_2kg">+</button>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">1/4 kg:</label>
+                    <div class="input-group">
+                        <button class="btn btn-outline-secondary decrement" type="button" data-target="peso1_4kg">-</button>
+                        <input type="number" class="form-control" name="peso1_4kg" id="peso1_4kg" value="0" min="0" readonly>
+                        <button class="btn btn-outline-secondary increment" type="button" data-target="peso1_4kg">+</button>
+                    </div>
+                </div>
+                <!-- Botón para avanzar a la selección de gustos -->
+                <button type="button" class="btn btn-primary mt-3" id="continueToGustos">Elegir Gustos</button>
+            
+
+                <!-- Sección de selección de gustos por pote -->
+                <div id="gustosSection" class="mt-5" style="display: none;">
+                    <h2>ELIGE TUS GUSTOS</h2>
+                    <div id="gustosContainer"></div>
+                    <button type="button" class="btn btn-secondary mt-3" id="continueToAdicionales">Elegir Adicionales</button>
+                </div>
+
+                <!-- Sección de adicionales -->
+                <div id="adicionalesSection" class="mt-5" style="display: none;">
+                    <h2>VAS A QUERER ADICIONALES</h2>
+                    <div class="mb-3">
+                        <label class="form-label">Cucuruchos:</label>
+                        <div class="input-group">
+                            <button class="btn btn-outline-secondary decrement" type="button" data-target="cucuruchos">-</button>
+                            <input type="number" class="form-control" name="cucuruchos" id="cucuruchos" value="0" min="0" readonly>
+                            <button class="btn btn-outline-secondary increment" type="button" data-target="cucuruchos">+</button>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Vasitos comestibles:</label>
+                        <div class="input-group">
+                            <button class="btn btn-outline-secondary decrement" type="button" data-target="vasitos">-</button>
+                            <input type="number" class="form-control" name="vasitos" id="vasitos" value="0" min="0" readonly>
+                            <button class="btn btn-outline-secondary increment" type="button" data-target="vasitos">+</button>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Baño de chocolate (indicar en aclaraciones en qué pote):</label>
+                        <div class="input-group">
+                            <button class="btn btn-outline-secondary decrement" type="button" data-target="banoChocolate">-</button>
+                            <input type="number" class="form-control" name="banoChocolate" id="banoChocolate" value="0" min="0" readonly>
+                            <button class="btn btn-outline-secondary increment" type="button" data-target="banoChocolate">+</button>
+                        </div>
+                    </div>
+                    <div class="mb-3 mt-4">
+                        <label for="aclaraciones" class="form-label">Aclaraciones:</label>
+                        <textarea id="aclaraciones" name="aclaraciones" class="form-control" rows="4" placeholder="Especifica cualquier detalle adicional, como en qué pote aplicar el baño de chocolate."></textarea>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <h2>DIRECCION DE ENTREGA:</h2>
+                    
+                    <!-- Selección de Barrio -->
+                    <div class="mb-3">
+                        <label class="form-label">Barrio:</label>
+                        <select class="form-select" name="barrio" id="barrio">
+                            <option value="Villa Ballester">Villa Ballester</option>
+                            <option value="Malaver">Malaver</option>
+                            <option value="San Andres">San Andres</option>
+                            <option value="Chilavert">Chilavert</option>
+                            <option value="San Martin">San Martin</option>
+                        </select>
+                    </div>
+                
+                    <!-- Selección de Calle -->
+                    <div class="mb-3">
+                        <label class="form-label">Calle:</label>
+                        <select class="form-select" name="calle" id="calle">
+                            <option value="Independencia">Independencia</option>
+                            <option value="Marengo">Marengo</option>
+                            <option value="Pueyrredon">Pueyrredon</option>
+                            <option value="Alvear">Alvear</option>
+                        </select>
+                    </div>
+                
+                    <!-- Campo de Altura -->
+                    <div class="mb-3">
+                        <label for="altura" class="form-label">Altura:</label>
+                        <input type="text" class="form-control" id="altura" name="altura" placeholder="Ej. 1234">
+                    </div>
+                
+                    <!-- Campo de Aclaraciones de Entrega -->
+                    <div class="mb-3">
+                        <label for="aclaracionesEntrega" class="form-label">Aclaraciones de la entrega:</label>
+                        <textarea id="aclaracionesEntrega" name="aclaracionesEntrega" class="form-control" rows="3" placeholder="Indique cualquier información adicional de entrega, piso 4 B, etc."></textarea>
+                    </div>
+                    
+                    <!-- Botón de pago MercadoPago -->
+                    <button type="button" class="btn w-100 d-flex align-items-center justify-content-center btn-termina-pedido" id="finalizarPedido">
+                        Termina tu pedido!
+                    </button>
+                </div>
+            </section>
         </form>
     </div>
 </main>
@@ -158,16 +161,16 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Funcionalidad para incrementar y decrementar los pesos y adicionales
+    // Incrementar y decrementar valores
     document.querySelectorAll('.increment').forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const target = document.getElementById(this.getAttribute('data-target'));
             target.value = parseInt(target.value) + 1;
         });
     });
-    
+
     document.querySelectorAll('.decrement').forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const target = document.getElementById(this.getAttribute('data-target'));
             if (parseInt(target.value) > 0) {
                 target.value = parseInt(target.value) - 1;
@@ -176,54 +179,115 @@
     });
 
     // Funcionalidad para avanzar a la selección de gustos
-    document.getElementById('continueToGustos').addEventListener('click', function() {
+    document.getElementById('continueToGustos').addEventListener('click', function () {
         const peso1kg = parseInt(document.getElementById('peso1kg').value);
         const peso1_2kg = parseInt(document.getElementById('peso1_2kg').value);
         const peso1_4kg = parseInt(document.getElementById('peso1_4kg').value);
-        
-        const gustosContainer = document.getElementById('gustosContainer');
-        gustosContainer.innerHTML = ''; // Limpiar gustos anteriores
 
-        // Generar selección de gustos para cada pote según el peso seleccionado
-        let poteIndex = 1;
+        const gustosContainer = document.getElementById('gustosContainer');
+        gustosContainer.innerHTML = '';
+
         const addPotes = (cantidad, pesoEtiqueta) => {
             for (let i = 0; i < cantidad; i++) {
                 const poteDiv = document.createElement('div');
                 poteDiv.classList.add('mb-3');
                 poteDiv.innerHTML = `
-                    <label class="form-label">Envase de ${pesoEtiqueta} - Selecciona tus gustos:</label>
-                    <select class="form-select" name="gustosPote${poteIndex}[]" multiple>
-                        <option value="chocolate">Chocolate</option>
-                        <option value="vainilla">Vainilla</option>
-                        <option value="fresa">Frutilla</option>
+                    <label class="form-label">Pote (${pesoEtiqueta}): Gustos:</label>
+                    <select class="form-select gustos" multiple>
+                        <option value="Chocolate">Chocolate</option>
+                        <option value="Vainilla">Vainilla</option>
+                        <option value="Fresa">Fresa</option>
+                        <option value="Dulce de leche">Dulce de leche</option>
                     </select>
-                    <small class="form-text text-muted">Mantén presionada Ctrl (Cmd en Mac) para seleccionar varios gustos.</small>
-                    <!-- Opción para apto celíacos -->
                     <div class="form-check mt-2">
-                        <input class="form-check-input" type="checkbox" name="celiacoPote${poteIndex}" id="celiacoPote${poteIndex}">
-                        <label class="form-check-label" for="celiacoPote${poteIndex}">
-                            Apto para celíacos
-                        </label>
+                        <input class="form-check-input celiaco-check" type="checkbox">
+                        <label class="form-check-label">Apto para celíacos</label>
                     </div>
                 `;
                 gustosContainer.appendChild(poteDiv);
-                poteIndex++;
             }
         };
 
-        // Añadir potes según la cantidad y el peso
         addPotes(peso1kg, '1 kg');
         addPotes(peso1_2kg, '1/2 kg');
         addPotes(peso1_4kg, '1/4 kg');
 
         document.getElementById('gustosSection').style.display = 'block';
-        this.style.display = 'none'; // Ocultar botón de continuar a la selección de gustos
+        this.style.display = 'none';
     });
 
-    // Funcionalidad para mostrar la sección de adicionales al continuar desde gustos
-    document.getElementById('continueToAdicionales').addEventListener('click', function() {
+    // Funcionalidad para mostrar la sección de adicionales
+    document.getElementById('continueToAdicionales').addEventListener('click', function () {
         document.getElementById('adicionalesSection').style.display = 'block';
-        this.style.display = 'none'; // Ocultar el botón "Elegir Adicionales"
+        this.style.display = 'none';
+    });
+
+    // Almacenar datos y redirigir a la página de resumen
+    document.getElementById('finalizarPedido').addEventListener('click', function () {
+        const peso1kg = parseInt(document.getElementById('peso1kg').value);
+        const peso1_2kg = parseInt(document.getElementById('peso1_2kg').value);
+        const peso1_4kg = parseInt(document.getElementById('peso1_4kg').value);
+
+        const gustos = [];
+        const gustosElements = document.querySelectorAll('.gustos');
+        const celiacoChecks = document.querySelectorAll('.celiaco-check');
+        let index = 0;
+
+        if (peso1kg > 0) {
+            for (let i = 0; i < peso1kg; i++) {
+                const selected = Array.from(gustosElements[index].selectedOptions).map(option => option.value);
+                gustos.push({
+                    peso: '1 kg',
+                    sabores: selected.join(', ') || 'Sin gustos seleccionados',
+                    celiaco: celiacoChecks[index].checked // Verificar si el checkbox está marcado
+                });
+                index++;
+            }
+        }
+        if (peso1_2kg > 0) {
+            for (let i = 0; i < peso1_2kg; i++) {
+                const selected = Array.from(gustosElements[index].selectedOptions).map(option => option.value);
+                gustos.push({
+                    peso: '1/2 kg',
+                    sabores: selected.join(', ') || 'Sin gustos seleccionados',
+                    celiaco: celiacoChecks[index].checked
+                });
+                index++;
+            }
+        }
+        if (peso1_4kg > 0) {
+            for (let i = 0; i < peso1_4kg; i++) {
+                const selected = Array.from(gustosElements[index].selectedOptions).map(option => option.value);
+                gustos.push({
+                    peso: '1/4 kg',
+                    sabores: selected.join(', ') || 'Sin gustos seleccionados',
+                    celiaco: celiacoChecks[index].checked
+                });
+                index++;
+            }
+        }
+
+        const adicionales = {
+            cucuruchos: document.getElementById('cucuruchos').value,
+            vasitos: document.getElementById('vasitos').value,
+            banoChocolate: document.getElementById('banoChocolate').value
+        };
+
+        const direccion = {
+            barrio: document.getElementById('barrio').value,
+            calle: document.getElementById('calle').value,
+            altura: document.getElementById('altura').value,
+            aclaraciones: document.getElementById('aclaracionesEntrega').value
+        };
+
+        const pedido = {
+            envasesYGustos: gustos,
+            adicionales,
+            direccion
+        };
+
+        localStorage.setItem('pedido', JSON.stringify(pedido));
+        window.location.href = 'resumen.html';
     });
 </script>
 </body>

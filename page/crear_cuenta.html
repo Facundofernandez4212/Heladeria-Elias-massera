@@ -3,49 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Cuenta - Heladería Elías Massera</title>
+    <title>Crear Cuenta - Elias Massera</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilo.css">
     <link rel="icon" href="../medios/Fondo de cucurucho eliminado.png">
 </head>
 <body>
-    <div class="grid_container">
-        <header class="grid_header">
-            <div class="logo">
-                <img src="../medios/Fondo de cucurucho eliminado.png" alt="Logo Heladería Elías Massera">
+    <header class="bg-pink text-white">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <span class="navbar-text">Elias Massera</span>
+                    <img src="../medios/Fondo de cucurucho eliminado.png" alt="Logo Heladería Elías Massera">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="pedido_online.html" class="nav-link">Pedido</a></li>
+                        <li class="nav-item"><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                        <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
+                        <li class="nav-item d-lg-none"><a href="iniciar_sesion.html" class="nav-link">Iniciar Sesión</a></li>
+                    </ul>
+                </div>
+                <a href="iniciar_sesion.html" class="btn btn-light d-none d-lg-block">Iniciar Sesión</a>
             </div>
-            <nav">
-                <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="pedido_online.html">Hace tu pedido online</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                </ul>
-            </nav>
-            <div class="login">
-                <a href="iniciar_sesion.html" class="login_boton">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+<main class="container mt-5 crear-cuenta">
+    <section>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="titulo">Crear Cuenta</h1>
+                <form action="/submit_register" method="post" class="formulario">
+                    <div class="mb-4">
+                        <label for="username" class="form-label">Nombre de Usuario:</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Escribe tu nombre de usuario" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="form-label">Correo Electrónico:</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Escribe tu correo electrónico" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Contraseña:</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Escribe tu contraseña" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="confirmPassword" class="form-label">Confirmar Contraseña:</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirma tu contraseña" required>
+                    </div>
+                    <button type="submit" class="btn btn-pink w-100">Crear Cuenta</button>
+                </form>
+                <p class="text-center mt-3">¿Ya tienes una cuenta? <a href="iniciar_sesion.html" class="link-pink">Inicia sesión aquí</a></p>
             </div>
-        </header>
-        <main class="grid_main create_account_section">
-            <h1>Crear Cuenta</h1>
-            <form action="/submit_account" method="post" class="form_container">
-                <label for="dni">DNI:</label>
-                <input type="text" id="dni" name="dni" required class="form_field">
+        </div>
+    </section>
+</main>
+<footer class="foter bg-dark text-white text-center py-3 mt-5">
+    <p>© 2024 Heladería Elías Massera - Todos los derechos reservados</p>
+</footer>
 
-                <label for="fullname">Nombre y Apellido:</label>
-                <input type="text" id="fullname" name="fullname" required class="form_field">
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required class="form_field">
-
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required class="form_field">
-
-                <button type="submit" class="form_button">Crear Cuenta</button>
-            </form>
-        </main>
-        <footer class="grid_footer">
-            <p>© 2024 Heladería Elías Massera - Todos los derechos reservados</p>
-        </footer>
-    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

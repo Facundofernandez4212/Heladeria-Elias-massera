@@ -1,4 +1,10 @@
 @charset "UTF-8";
+* {
+  margin: 0; /* Elimina todos los márgenes */
+  padding: 0; /* Elimina todos los paddings */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total de los elementos */
+}
+
 body, html {
   height: 100%;
   margin: 0;
@@ -9,12 +15,60 @@ body, html {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #333;
+  overflow-x: hidden; /* Esto asegura que no haya scroll horizontal */
+  width: 100%; /* Asegura que el cuerpo ocupe todo el ancho de la pantalla */
+}
+
+.container {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto; /* Centra el contenedor global */
+}
+
+body {
+  margin: 0; /* Elimina márgenes globales que puedan interferir */
+  padding: 0;
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+.gustos-page, .nosotros-page {
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+  margin: 0; /* Elimina márgenes adicionales */
+  padding: 0; /* Elimina padding */
+}
+
+.gustos-page h1, .nosotros-page h1, .pedido-page h1, .resumen-page h1 {
+  width: 100vw; /* Ocupa todo el ancho del viewport */
+  height: 200px; /* Define la altura */
+  margin: 0; /* Asegura que no haya márgenes */
+  padding: 0 20px; /* Añade espaciado interno al texto */
+  display: flex;
+  align-items: center; /* Centra verticalmente el texto */
+  justify-content: flex-start; /* Alinea el texto a la izquierda */
+  font-family: "Alternate Gothic Cond ATF Bold", sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  background-image: url(../medios/chocolateprodu.jpg); /* Imagen de fondo */
+  background-size: cover; /* La imagen cubre el área completa */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita repeticiones */
+  overflow: hidden; /* Oculta cualquier contenido sobrante */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra decorativa */
+  position: relative; /* Asegura que el texto se posicione correctamente */
 }
 
 @font-face {
   font-family: "Fiorina Text";
-  src: url("./fonts/FiorinaText-SemiBold.woff2") format("woff2"), url("./fonts/FiorinaText-SemiBold.woff") format("woff");
+  src: url("../fonts/FiorinaText-SemiBold.woff2") format("woff2"), url("../fonts/FiorinaText-SemiBold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Alternate Gothic Cond ATF Bold";
+  src: url("../fonts/AlternateGothicCondATFBold.woff2") format("woff2"), url("../fonts/AlternateGothicCondATFBold.woff") format("woff");
+  font-weight: bold;
   font-style: normal;
 }
 .bg-pink {
@@ -50,8 +104,23 @@ body, html {
   border-color: #DE306D;
 }
 
+.navbar-brand {
+  display: flex; /* Para alinear los elementos en una fila */
+  align-items: center; /* Alinea verticalmente los elementos */
+  gap: 10px; /* Espacio entre el texto y el icono del cucurucho */
+}
+
+.navbar-text {
+  font-size: 3.3rem; /* Tamaño del texto */
+  font-weight: bold; /* Hace el texto más destacado */
+  color: #DE306D;
+  margin: 0;
+}
+
 .navbar-brand img {
-  height: 85px; /* Ajusta la altura para que el nav no se expanda */
+  height: 80px; /* Asegura que el cucurucho no sea más alto que el texto */
+  margin: 0;
+  align-self: center; /* Garantiza que esté alineado verticalmente */
 }
 
 .login .btn {
@@ -78,28 +147,6 @@ body, html {
     margin-left: auto;
   }
 }
-h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #030303;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
-  padding: 20px 25px;
-  display: block;
-  text-align: center;
-  margin: 30px auto;
-  width: fit-content;
-}
-
-section {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 35px;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
 footer {
   background-color: #333;
   color: white;
@@ -108,6 +155,37 @@ footer {
   position: static;
   width: 100%;
   margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: #DE306D;
+  border-color: #DE306D;
+}
+
+.btn-primary:hover {
+  background-color: #f05c8f;
+  border-color: #f05c8f;
+}
+
+.btn-custom, .btn-termina-pedido {
+  background-color: #DE306D;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+.btn-custom:hover, .btn-termina-pedido:hover {
+  background-color: #b02455;
+}
+
+.btn-termina-pedido {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
 }
 
 .map-container {
@@ -119,31 +197,11 @@ footer {
   max-width: 600px;
   margin: 20px auto;
 }
-
 .map-container iframe {
   border-radius: 10px;
   width: 100%;
   height: 400px;
   border: none;
-}
-
-form {
-  max-width: 600px;
-  margin: auto;
-}
-
-.form-control {
-  margin-bottom: 15px;
-}
-
-.btn-primary {
-  background-color: #DE306D;
-  border-color: #DE306D;
-}
-
-.btn-primary:hover {
-  background-color: #f05c8f;
-  border-color: #f05c8f;
 }
 
 .section-title {
@@ -162,21 +220,212 @@ form {
   font-weight: 700;
 }
 
-.btn-custom {
+/* Título de las categorías */
+.gustos-page h2 {
+  font-family: "Alternate Gothic Cond ATF Bold", sans-serif; /* Fuente personalizada */
+  font-size: 3rem;
+  font-weight: bold; /* Asegura la negrita */
+  text-align: left; /* Alinea el texto a la izquierda */
+  margin: 0 auto; /* Centra dentro del contenedor */
+  margin-bottom: 20px;
+  max-width: 1200px; /* Ajusta el ancho máximo */
+  padding: 0 40px; /* Asegura un padding más uniforme en ambos lados */
+  border-bottom: 2px solid #ccc; /* Línea separadora */
+  padding-bottom: 10px;
+}
+
+/* Subtítulos de los gustos */
+.gustos-page h3 {
+  font-family: "Alternate Gothic Cond ATF Bold", sans-serif; /* Fuente personalizada */
+  font-size: 1.5rem;
+  font-weight: bold; /* Asegura la negrita */
+  margin-top: 15px;
+}
+
+.gustos-page img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gustos-page img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.gustos-page .gustos {
+  display: flex;
+  flex-direction: column; /* Organiza el contenido en una columna */
+  align-items: center; /* Centra el contenido horizontalmente */
+  margin: 0 auto; /* Centra el contenedor */
+  max-width: 1200px; /* Define un ancho máximo */
+  padding: 0 40px; /* Asegura un padding uniforme */
+}
+
+.gustos-page .row {
+  margin-bottom: 20px;
+}
+
+/* Categorías sticky */
+.categorias {
+  position: sticky;
+  justify-content: flex-end; /* Alinea el texto a la izquierda */
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+}
+
+.categorias .row {
+  display: flex; /* Habilita Flexbox */
+  justify-content: flex-end; /* Alinea al margen derecho */
+  align-items: center; /* Alinea verticalmente al centro */
+  margin: 0 auto; /* Elimina márgenes no deseados y asegura que ocupe todo el contenedor */
+  max-width: 1200px; /* Define un ancho máximo para evitar expansión */
+  text-align: right; /* Asegura que el texto también esté alineado a la derecha */
+  padding-right: 0; /* Elimina cualquier padding en el lado derecho */
+}
+
+.categorias .categoria {
+  text-align: center; /* Mantén el contenido centrado dentro de cada categoría */
+  padding: 0 10px; /* Espaciado interno */
+  margin: 0; /* Elimina márgenes adicionales */
+  flex: 0 0 auto; /* Evita que las categorías se expandan para ocupar espacio adicional */
+}
+
+.categorias .categoria img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.categorias .categoria img:hover {
+  transform: scale(1.1);
+}
+
+.categorias .categoria:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 50%;
+  background-color: #ccc;
+}
+
+.categorias .categoria:last-child::after {
+  display: none;
+}
+
+.categorias .categoria p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Elimina el subrayado en el menú */
+.categorias .categoria a {
+  text-decoration: none; /* Elimina subrayado */
+  color: inherit;
+}
+
+/* Media Queries para responsive */
+@media (max-width: 768px) {
+  .categorias .categoria img {
+    width: 50px;
+    height: 50px;
+  }
+  .categorias .categoria p {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 480px) {
+  .categorias .row {
+    flex-wrap: wrap; /* Permite que las categorías se ajusten en varias filas */
+    justify-content: center; /* Centra las categorías horizontalmente */
+  }
+  .categorias .row .categoria:nth-last-child(1) {
+    display: none !important;
+  }
+}
+.sabores-tradicion-local .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 4rem;
+}
+.sabores-tradicion-local .container-fluid .col-md-4 {
+  flex: 1;
+  margin: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 200px;
+}
+.sabores-tradicion-local .container-fluid .col-md-4 .section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-family: "Alternate Gothic Cond ATF Bold", sans-serif;
+  flex-grow: 0;
+}
+.sabores-tradicion-local .container-fluid .col-md-4 .section-text {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  flex-grow: 1;
+}
+.sabores-tradicion-local .container-fluid .col-md-4 .btn-custom {
   background-color: #DE306D;
   color: white;
   font-weight: 700;
-  text-transform: uppercase;
-  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 4px;
-  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  align-self: center;
 }
-.btn-custom:hover {
-  background-color: #f05c8f;
+.sabores-tradicion-local .container-fluid .col-md-4 .btn-custom:hover {
+  background-color: #b02455;
+}
+@media (max-width: 576px) {
+  .sabores-tradicion-local .container-fluid {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .sabores-tradicion-local .container-fluid .col-md-4 {
+    margin: 1.5rem 0;
+    min-height: auto;
+    align-items: center;
+  }
+  .sabores-tradicion-local .container-fluid .btn-custom {
+    margin: 1rem auto;
+  }
+}
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
 }
 
 .position-relative {
   position: relative;
+  overflow: hidden;
 }
 
 .overlay-text-left {
@@ -184,17 +433,41 @@ form {
   top: 50%;
   left: 10%;
   transform: translateY(-50%);
-  background-color: #DE306D;
+  background-color: rgba(222, 48, 109, 0.8);
   padding: 2rem;
   border-radius: 8px;
   max-width: 400px;
   text-align: left;
+  z-index: 10;
+}
+.overlay-text-left h2.section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.overlay-text-left p.section-text {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+.overlay-text-left a.btn-custom {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.overlay-text-left a.btn-custom:hover {
+  background-color: white;
+  color: #DE306D;
 }
 @media (max-width: 576px) {
   .overlay-text-left {
-    top: 10%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -50%);
     width: 90%;
     max-width: none;
     padding: 1.5rem;
@@ -202,44 +475,719 @@ form {
   }
 }
 
-.section-title {
+.puntos-massera {
+  padding: 40px 0;
+  font-family: "Alternate Gothic Cond ATF Bold", sans-serif; /* Asegúrate de que la fuente esté aplicada */
+  font-weight: bold;
+  font-size: 3rem;
+  text-align: center;
+}
+.puntos-massera .text-section h2 {
   font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
-@media (max-width: 576px) {
-  .section-title {
-    font-size: 1.5rem;
-  }
-}
-
-.section-text {
-  font-weight: 400;
+.puntos-massera .text-section p {
   font-size: 1rem;
-  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  color: #333; /* Texto en un tono gris */
+  font-weight: normal;
+  margin-bottom: 15px; /* Añadido para espacio entre párrafos */
 }
-@media (max-width: 576px) {
-  .section-text {
-    font-size: 0.9rem;
+.puntos-massera img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Para esquinas redondeadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  margin-bottom: 20px; /* Añadido para espacio debajo de la imagen */
+}
+@media (max-width: 768px) {
+  .puntos-massera {
+    padding: 20px 10px; /* Ajuste de padding para móvil */
+  }
+  .puntos-massera .text-section h2 {
+    font-size: 1.8rem; /* Reducir tamaño para móvil */
+    margin-bottom: 15px; /* Espaciado extra entre título y texto */
+  }
+  .puntos-massera .text-section p {
+    margin-bottom: 20px; /* Más espacio entre los párrafos en móvil */
+  }
+  .puntos-massera img {
+    margin-bottom: 30px; /* Espacio adicional para separar imagen del texto */
   }
 }
 
-.btn-custom {
+.nosotros-page h1 {
+  background-image: url(../medios/nosotrosh1copia.png); /* Imagen de fondo */
+}
+
+/* Márgenes uniformes para ambas secciones */
+.historia-wrapper, .calidad-contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Sección de Nosotros */
+.historia-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  margin-bottom: 130px;
+}
+
+.historia {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 0;
+  gap: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.historia .content {
+  flex: 1;
+  text-align: left;
+  padding-right: 20px;
+}
+
+.historia h2, .local-content h2 {
+  font-family: "Alternate Gothic Cond ATF Bold", sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #DE306D;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.historia h3, .local-content h3 {
+  font-family: "Alternate Gothic Cond ATF Bold", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.historia p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: left;
+}
+
+.historia .imagen {
+  flex: 1;
+  max-width: 45%;
+  margin-left: auto;
+}
+
+.historia .imagen img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Sección de Calidad */
+.calidad-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  text-align: center;
+  margin-bottom: 130px;
+}
+
+.calidad-item {
+  flex: 1;
+  max-width: 30%;
+  padding: 10px;
+}
+
+.calidad-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.calidad-item h3 {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #DE306D;
+  margin-bottom: 10px;
+}
+
+.calidad-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Sección Local */
+.nuestro-local {
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.nuestro-local .local-wrapper {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  width: 100%;
+  gap: 30px;
+}
+.nuestro-local #carrusel-local {
+  flex: 1;
+  max-width: 50%;
+}
+.nuestro-local #carrusel-local .carousel-inner img {
+  border-radius: 10px;
+}
+.nuestro-local .local-content {
+  flex: 1;
+  text-align: left;
+}
+.nuestro-local .local-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Sección Ubicación */
+.ubicacion {
+  padding: 50px 20px;
+  margin-bottom: 100px;
+}
+.ubicacion .ubicacion-wrapper {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+  align-items: center;
+}
+.ubicacion .ubicacion-content {
+  flex: 1;
+  text-align: left;
+}
+.ubicacion .ubicacion-content h2 {
+  font-family: "Alternate Gothic Cond ATF Bold", sans-serif;
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #DE306D;
+  margin-bottom: 10px;
+}
+.ubicacion .ubicacion-content h3 {
+  font-family: "Alternate Gothic Cond ATF Bold", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+.ubicacion .ubicacion-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 10px;
+}
+.ubicacion .ubicacion-mapa {
+  flex: 1;
+  max-width: 50%;
+}
+.ubicacion .ubicacion-mapa iframe {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  /* Ajustes generales para secciones */
+  .historia-wrapper, .calidad-contenido, .nuestro-local, .ubicacion {
+    margin: 0 auto; /* Centra las secciones */
+    padding: 20px 10px; /* Márgenes internos más pequeños */
+    max-width: 100%; /* Asegura que ocupe el ancho disponible */
+  }
+  /* Ajuste para márgenes entre secciones */
+  .historia, .calidad-contenido, .nuestro-local, .ubicacion {
+    flex-direction: column; /* Asegura disposición en columna */
+    align-items: center; /* Centra contenido horizontalmente */
+    margin-bottom: 30px; /* Reduce el espacio entre secciones */
+    text-align: center; /* Centra el texto */
+  }
+  /* Ajustes de texto */
+  h2, .local-content h2, .ubicacion-content h2 {
+    font-size: 1.8rem; /* Tamaño de fuente más pequeño */
+    text-align: center; /* Centra los títulos */
+  }
+  h3, .local-content h3, .ubicacion-content h3 {
+    font-size: 1.4rem; /* Tamaño de subtítulos más pequeño */
+    text-align: center; /* Centra los subtítulos */
+  }
+  p, .local-content p, .ubicacion-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center; /* Centra los párrafos */
+  }
+  /* Ajuste para la sección de historia */
+  .historia {
+    flex-direction: column; /* Disposición en columna */
+    gap: 20px; /* Espaciado entre texto e imagen */
+  }
+  .historia .content {
+    padding-right: 0; /* Elimina el espaciado lateral */
+  }
+  .historia .imagen {
+    max-width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    margin: 0 auto; /* Centra la imagen */
+  }
+  .historia .imagen img {
+    width: 100%; /* Imagen ocupa el ancho disponible */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  /* Ajuste para el carrusel */
+  /* Ajuste para el carrusel */
+  #carrusel-local {
+    max-width: 100%; /* Asegura que no desborde en mobile */
+    margin: 0 auto; /* Centra el carrusel */
+    overflow: hidden; /* Evita cualquier desbordamiento de las imágenes */
+  }
+  #carrusel-local .carousel-inner {
+    height: 300px; /* Altura fija para el carrusel */
+  }
+  #carrusel-local .carousel-inner img {
+    width: 100%; /* Asegura que las imágenes ocupen todo el ancho */
+    height: 300px; /* Mantiene una altura fija */
+    object-fit: cover; /* Recorta la imagen si es necesario para llenar el espacio */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  #carrusel-local .carousel-item {
+    height: 300px; /* Altura consistente para cada imagen del carrusel */
+    display: flex; /* Asegura que las imágenes estén centradas */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+  /* Evita cualquier distorsión en el cambio de imágenes */
+  #carrusel-local .carousel-inner {
+    transition: transform 0.5s ease-in-out; /* Transición suave entre imágenes */
+  }
+  /* Ajuste para la sección de ubicación */
+  .ubicacion-wrapper {
+    flex-direction: column; /* Cambia a disposición vertical */
+    text-align: center;
+  }
+  .ubicacion-content {
+    text-align: center;
+  }
+  .ubicacion-mapa iframe {
+    width: 100%; /* Asegura que el mapa ocupe todo el ancho disponible */
+    height: 250px; /* Altura fija para el mapa */
+    border-radius: 10px; /* Mantiene los bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-top: 20px; /* Espaciado superior */
+  }
+  /* Ajuste para la sección de calidad */
+  .calidad-contenido {
+    flex-direction: column; /* Cambia a disposición vertical */
+    gap: 20px; /* Espaciado entre columnas */
+  }
+  .calidad-item {
+    max-width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+  }
+  /* Ajuste para Nuestro Local */
+  .nuestro-local .local-wrapper {
+    flex-direction: column; /* Asegura disposición en columna */
+    gap: 20px; /* Espaciado entre los elementos */
+  }
+  .local-content {
+    text-align: center; /* Centra texto */
+  }
+  /* Ajustes generales de espaciado y márgenes */
+  section {
+    margin-bottom: 20px; /* Reduce espacio entre secciones */
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Ajustes generales para tablet */
+  .historia-wrapper, .calidad-contenido, .nuestro-local, .ubicacion {
+    margin: 0 auto; /* Centra las secciones */
+    padding: 30px 20px; /* Ajusta los márgenes internos */
+    max-width: 100%; /* Asegura que ocupe el ancho disponible */
+  }
+  /* Márgenes entre secciones */
+  .historia, .calidad-contenido, .nuestro-local, .ubicacion {
+    margin-bottom: 50px; /* Espaciado uniforme entre secciones */
+  }
+  /* Ajustes de texto */
+  h2, .local-content h2, .ubicacion-content h2 {
+    font-size: 2.5rem; /* Tamaño de fuente más grande para tablet */
+    text-align: center; /* Centra los títulos */
+  }
+  h3, .local-content h3, .ubicacion-content h3 {
+    font-size: 1.8rem; /* Tamaño de subtítulos optimizado */
+    text-align: center; /* Centra los subtítulos */
+  }
+  p, .local-content p, .ubicacion-content p {
+    font-size: 1.2rem; /* Aumenta ligeramente el tamaño del texto */
+    line-height: 1.6; /* Mejora la legibilidad */
+    text-align: center; /* Centra los párrafos */
+  }
+  /* Sección de Historia */
+  .historia {
+    flex-direction: column; /* Disposición en columna */
+    gap: 30px; /* Espaciado entre texto e imagen */
+    text-align: center;
+  }
+  .historia .content {
+    padding-right: 0; /* Elimina el espaciado lateral */
+    text-align: center;
+  }
+  .historia .imagen {
+    max-width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    margin: 0 auto; /* Centra la imagen */
+  }
+  .historia .imagen img {
+    width: 100%; /* Imagen ocupa el ancho disponible */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  /* Sección del carrusel */
+  #carrusel-local {
+    max-width: 90%; /* Ocupa el 90% del ancho en tablet */
+    margin: 0 auto; /* Centra el carrusel */
+    overflow: hidden; /* Evita cualquier desbordamiento de las imágenes */
+  }
+  #carrusel-local .carousel-inner {
+    height: 350px; /* Altura fija para el carrusel */
+  }
+  #carrusel-local .carousel-inner img {
+    width: 100%; /* Asegura que las imágenes ocupen todo el ancho */
+    height: 350px; /* Mantiene una altura fija */
+    object-fit: cover; /* Recorta la imagen si es necesario */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  #carrusel-local .carousel-item {
+    height: 350px; /* Altura consistente para cada imagen */
+    display: flex; /* Asegura que las imágenes estén centradas */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+  /* Sección Ubicación */
+  .ubicacion-wrapper {
+    flex-direction: column; /* Cambia a disposición vertical */
+    text-align: center;
+  }
+  .ubicacion-content {
+    text-align: center;
+  }
+  .ubicacion-mapa iframe {
+    width: 100%; /* Asegura que el mapa ocupe todo el ancho disponible */
+    height: 300px; /* Altura fija para el mapa */
+    border-radius: 10px; /* Mantiene los bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-top: 20px; /* Espaciado superior */
+  }
+  /* Sección de Calidad */
+  .calidad-contenido {
+    flex-direction: row; /* Cambia a disposición en filas */
+    flex-wrap: wrap; /* Asegura que los ítems se distribuyan en filas múltiples si es necesario */
+    justify-content: space-between; /* Distribución uniforme */
+    gap: 20px; /* Espaciado entre columnas */
+  }
+  .calidad-item {
+    max-width: 48%; /* Cada ítem ocupa aproximadamente la mitad del ancho */
+    margin-bottom: 20px; /* Espaciado inferior entre ítems */
+  }
+  .calidad-item img {
+    margin: 0 auto; /* Centra imagen */
+  }
+  /* Ajuste adicional para el footer */
+  footer {
+    text-align: center; /* Centra el contenido del footer */
+    padding: 30px 20px; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente estándar */
+  }
+}
+h1 {
+  font-family: "Alternate Gothic Cond ATF Bold", sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #DE306D;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.btn-pink {
   background-color: #DE306D;
   color: white;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.btn-pink:hover {
+  background-color: #b52556;
+}
+
+.formulario {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formulario input {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.formulario label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+.foter {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.link-pink {
+  color: #DE306D;
+  font-weight: bold;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
-.btn-custom:hover {
-  background-color: #DE306D;
+.link-pink:hover {
+  color: #b52556;
 }
+
 @media (max-width: 576px) {
-  .btn-custom {
-    align-self: center;
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
   }
+  .formulario {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+  .formulario input {
+    font-size: 0.9rem;
+  }
+  .btn-pink {
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+.pedido-page h1 {
+  background-image: url(../medios/nosotros.jpg); /* Imagen de fondo */
+}
+
+.pedido-page h1 {
+  margin: 0;
+}
+.pedido-page .pedido-wrapper {
+  border-radius: 10px;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+.pedido-page .pedido-form .pedido-section {
+  margin-bottom: 30px;
+}
+.pedido-page .pedido-form .pedido-section h2,
+.pedido-page .pedido-form .pedido-section h3 {
+  font-family: "Alternate Gothic Cond ATF Bold", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #DE306D;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.pedido-page .pedido-form .pedido-section h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+.pedido-page .pedido-form .pedido-section .mb-3 {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  max-width: 100%;
+}
+.pedido-page .pedido-form .pedido-section .mb-3 label {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #555;
+  flex: 0 0 150px;
+  text-align: left;
+}
+.pedido-page .pedido-form .pedido-section .mb-3 input, .pedido-page .pedido-form .pedido-section .mb-3 select, .pedido-page .pedido-form .pedido-section .mb-3 textarea {
+  flex: 1;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.pedido-page .pedido-form .pedido-section .mb-3 textarea {
+  height: 100px;
+}
+.pedido-page .pedido-form .pedido-section .input-group {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.pedido-page .pedido-form .pedido-section .input-group .btn {
+  font-size: 1.2rem;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pedido-page .pedido-form .pedido-section .input-group input {
+  text-align: center;
+  font-size: 1.2rem;
+  width: 80px;
+  margin: 0;
+}
+.pedido-page .pedido-form .btn-primary {
+  background-color: #DE306D;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.pedido-page .pedido-form .btn-primary:hover {
+  background-color: #b52556;
+}
+.pedido-page .pedido-form .btn-termina-pedido {
+  background-color: #DE306D;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+.pedido-page .pedido-form .btn-termina-pedido:hover {
+  background-color: #b52556;
+}
+.pedido-page #gustosSection,
+.pedido-page #adicionalesSection {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.dudas {
+  display: flex; /* Habilita Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  text-align: center; /* Centra el texto dentro del párrafo */
+  height: 100px; /* Ajusta la altura según sea necesario */
+}
+
+.dudas p {
+  text-decoration: underline; /* Subraya el texto */
+  font-size: 1.2rem; /* Ajusta el tamaño de la fuente si es necesario */
+  margin: 0; /* Elimina márgenes para una alineación precisa */
+}
+
+@media (max-width: 768px) {
+  .input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  .input-group .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .input-group input {
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+.resumen-wrapper {
+  border-radius: 10px;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+.resumen-wrapper h2,
+.resumen-wrapper h3 {
+  font-family: "Alternate Gothic Cond ATF Bold", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #DE306D;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.resumen-wrapper h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Estilo para centrar el contenedor y subrayar el texto */
+.dudas {
+  display: flex; /* Activa Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  text-align: center; /* Alinea el texto dentro del párrafo */
+  height: 150px; /* Ajusta la altura según sea necesario */
+  margin: 20px auto; /* Centra el contenedor en el eje horizontal */
+}
+
+.dudas p {
+  text-decoration: underline; /* Subraya todo el texto */
+  font-size: 1.2rem; /* Tamaño del texto */
+  margin: 0; /* Elimina márgenes internos del párrafo */
 }
 
 /*# sourceMappingURL=estilo.css.map */

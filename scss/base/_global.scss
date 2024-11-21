@@ -1,0 +1,78 @@
+// Global Styles
+// Global Styles
+* {
+    margin: 0; /* Elimina todos los márgenes */
+    padding: 0; /* Elimina todos los paddings */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total de los elementos */
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+    overflow-x: hidden; /* Esto asegura que no haya scroll horizontal */
+    width: 100%; /* Asegura que el cuerpo ocupe todo el ancho de la pantalla */
+}
+
+.container {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto; /* Centra el contenedor global */
+}
+
+body {
+    margin: 0; /* Elimina márgenes globales que puedan interferir */
+    padding: 0;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    overflow-x: hidden; /* Evita el scroll horizontal */
+}
+.gustos-page, .nosotros-page {
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    margin: 0; /* Elimina márgenes adicionales */
+    padding: 0; /* Elimina padding */
+}
+
+.gustos-page h1, .nosotros-page h1,.pedido-page h1, .resumen-page h1{
+    width: 100vw; /* Ocupa todo el ancho del viewport */
+    height: 200px; /* Define la altura */
+    margin: 0; /* Asegura que no haya márgenes */
+    padding: 0 20px; /* Añade espaciado interno al texto */
+    display: flex;
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: flex-start; /* Alinea el texto a la izquierda */
+    font-family: 'Alternate Gothic Cond ATF Bold', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    background-image: url(../medios/chocolateprodu.jpg); /* Imagen de fondo */
+    background-size: cover; /* La imagen cubre el área completa */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita repeticiones */
+    overflow: hidden; /* Oculta cualquier contenido sobrante */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra decorativa */
+    position: relative; /* Asegura que el texto se posicione correctamente */
+}
+
+
+// Importa la fuente Fiorina Text Semi Bold
+@font-face {
+    font-family: 'Fiorina Text';
+    src: url('../fonts/FiorinaText-SemiBold.woff2') format('woff2'),
+         url('../fonts/FiorinaText-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Alternate Gothic Cond ATF Bold";
+    src: url("../fonts/AlternateGothicCondATFBold.woff2") format("woff2"),
+         url("../fonts/AlternateGothicCondATFBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}

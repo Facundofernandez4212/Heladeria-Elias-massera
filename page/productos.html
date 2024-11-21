@@ -3,181 +3,464 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustos - Heladería Elías Massera</title>
+    <title>Productos - Elias Massera</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilo.css">
     <link rel="icon" href="../medios/Fondo de cucurucho eliminado.png">
 </head>
 <body>
-<header class="bg-pink text-white">
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="../medios/Fondo de cucurucho eliminado.png" alt="Logo Heladería Elías Massera" height="60">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a href="../index.html" class="nav-link">Inicio</a></li>
-                    <li class="nav-item"><a href="pedido_online.html" class="nav-link">Pedidos</a></li>
-                    <li class="nav-item"><a href="nosotros.html" class="nav-link">Nosotros</a></li>
-                    <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
-                    <li class="nav-item d-lg-none"><a href="iniciar_sesion.html" class="nav-link">Iniciar Sesión</a></li>
-                </ul>
+    <header class="bg-pink text-white">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <span class="navbar-text">Elias Massera</span>
+                    <img src="../medios/Fondo de cucurucho eliminado.png" alt="Logo Heladería Elías Massera">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="pedido_online.html" class="nav-link">Pedido</a></li>
+                        <li class="nav-item"><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                        <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
+                        <li class="nav-item d-lg-none"><a href="iniciar_sesion.html" class="nav-link">Iniciar Sesión</a></li>
+                    </ul>
+                </div>
+                <a href="iniciar_sesion.html" class="btn btn-light d-none d-lg-block">Iniciar Sesión</a>
             </div>
-            <a href="iniciar_sesion.html" class="btn btn-light d-none d-lg-block">Iniciar Sesión</a>
-        </div>
-    </nav>
-</header>
-
-<main class="container mt-5">
-    <h1 class="text-center">Productos</h1>
-    <section>
-        <h2 class="text-center">Cremas heladas</h2>
-        <section>
-            <h3>Chocolates</h3>
-            <div class="row text-center">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Chocolate de la casa</h4>
-                            <p class="card-text">Un clásico intenso y cremoso para los amantes del chocolate amargo.</p>
-                        </div>
+        </nav>
+    </header>
+<main class="gustos-page">
+    <div class="productos-page">
+        <h1 class="text-left">PRODUCTOS</h1>
+    </div>
+    
+    <div class="gustos mt-5">
+        <!-- Categorías -->
+        <section class="categorias mb-5 categorias-derecha">
+                <div class="row">
+                    <div class="col-auto categoria">
+                        <a href="#cremas">
+                            <img src="../medios/CREMAS ENC.png" alt="Cremas" class="img-fluid rounded-circle">
+                            <p>Cremas</p>
+                        </a>    
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Chocolate</h4>
-                            <p class="card-text">Chocolate semiamargo.</p>
-                        </div>
+                    <div class="col-auto categoria">
+                        <a href="#chocolates">
+                            <img src="../medios/CHOCOLATES.png" alt="Chocolates" class="img-fluid rounded-circle">
+                            <p>Chocolates</p>
+                        </a>
                     </div>
-                </div>
-                
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Chocolate con Almendras</h4>
-                            <p class="card-text">Chocolate semiamargo con almendras.</p>
-                        </div>
+                    <div class="col-auto categoria">
+                        <a href="#al_agua">
+                            <img src="../medios/FRUTALES.png" alt="Frutales" class="img-fluid rounded-circle">
+                            <p>Al Agua</p>
+                        </a>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Chocolate Italiano</h4>
-                            <p class="card-text">Chocolate semiamargo con almendras bañadas en chocolate.</p>
-                        </div>
+                    <div class="col-auto categoria">
+                        <a href="#sambayones">
+                            <img src="../medios/SAMBAYON ENC.png" alt="Sambayón" class="img-fluid rounded-circle">
+                            <p>Sambayónes</p>
+                        </a>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Chocolate Bariloche</h4>
-                            <p class="card-text">Chocolate semiamargo con almendras bañadas en caramelo.</p>
-                        </div>
+                    <div class="col-auto categoria">
+                        <a href="#dulce_de_leches">
+                            <img src="../medios/DDLES.png" alt="Dulce de Leche" class="img-fluid rounded-circle">
+                            <p>Dulce de Leches</p>
+                        </a>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Chocolate Suizo</h4>
-                            <p class="card-text">Base de mezcla de chocolate semiamargo con dulce de leche con trozos de chocolate en rama blanco.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Chocolate Griego</h4>
-                            <p class="card-text">Chocolate semiamargo con nueces y dulce de leche natural.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Alfajor</h4>
-                            <p class="card-text">Chocolate semiamargo con pedazos de alfajor y dulce de leche natural.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Chocolate con pasas al Rhum</h4>
-                            <p class="card-text">Chocolate semiamargo con pasas de uva bañadas en Rhum.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Chocolate Blanco</h4>
-                            <p class="card-text">Chocolate blanco con trozos de chocolate en rama blanco.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Mousse de chocolate</h4>
-                            <p class="card-text">Base de chocolate semiamargo con licor.</p>
-                        </div>
+                    <div class="col-auto categoria">
+                        <a href="#tortas_heladas">
+                            <img src="../medios/tortasheladasenca.png" alt="Tortas Heladas" class="img-fluid rounded-circle">
+                            <p>Tortas Heladas</p>
+                        </a>
                     </div>
                 </div>
         </section>
-        <section>
-            <h3>Dulce de leches</h3>
-            <div class="row text-center">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Dulce de Leche Granizado</h2>
-                            <p class="card-text">Dulce de leche con trozos de chocolate en rama semiamargo.</p>
-                        </div>
-                    </div>
+
+        <section id="cremas" class="mb-5">
+            <h2>CREMAS</h2>
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CREMA AMERICANA.jpg" alt="Americana" class="img-fluid rounded">
+                    <h3>AMERICANA</h3>
+                    <p>Nuestra receta original con crema batida.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/BANANA SPLIT.jpg" alt="Banana Split" class="img-fluid rounded">
+                    <h3>BANANA SPLIT</h3>
+                    <p>Con dulce de leche tradicional y trocitos de chocolate semi amargo.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/COCO DDL.jpg" alt="Coco con Dulce de Leche" class="img-fluid rounded">
+                    <h3>COCO CON DULCE DE LECHE</h3>
+                    <p>Con coco de las Filipinas y dulce de leche tradicional.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CHOCOTORTA.jpg" alt="Chocotorta" class="img-fluid rounded">
+                    <h3>CHOCOTORTA</h3>
+                    <p>Base de dulce de leche mezclado con queso mascarpone con galletitas chocolinas.</p>
                 </div>
 
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Dulce de Leche</h2>
-                            <p class="card-text">Base de helado de dulce de leche.</p>
-                        </div>
-                    </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/T RAMONTANA.png" alt="Tramontana" class="img-fluid rounded">
+                    <h3>TRAMONTANA</h3>
+                    <p>Base de crema americana con dulce de leche natural y bolitas de chocolate.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/MENTA GRANIZADA.jpg" alt="Menta Granizada" class="img-fluid rounded">
+                    <h3>MENTA GRANIZADA</h3>
+                    <p>Helado de menta combinado con trozos de chocolate en rama.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/GRANIZADO.jfif" alt="Granizado" class="img-fluid rounded">
+                    <h3>GRANIZADO</h3>
+                    <p>Base de crema americana con trozos de chocolate en rama negro.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CREMA MOKA.png" alt="Crema Moka" class="img-fluid rounded">
+                    <h3>CREMA MOKA</h3>
+                    <p>Helado de café suave y cremoso para los amantes del moka.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CREMA DEL CIELO.jfif.png" alt="Crema del Cielo" class="img-fluid rounded">
+                    <h3>CREMA DEL CIELO</h3>
+                    <p>Clásico helado con un tono celeste y sabor dulce y cremoso.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/FRUTOS DEL BOSQUE.jpg" alt="Frutos del Bosque" class="img-fluid rounded">
+                    <h3>FRUTOS DEL BOSQUE</h3>
+                    <p>Base de crema americana con salsa de 5 frutos rojos.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/DURAZNO CHANTILLY.jpg" alt="Durazno Chantilly" class="img-fluid rounded">
+                    <h3>DURAZNO CHANTILLY</h3>
+                    <p>Delicado durazno a la crema con un toque de chantilly con trozos de durazno.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/ARANDANOS.png" alt="Arandanos" class="img-fluid rounded">
+                    <h3>ARANDANOS</h3>
+                    <p>Cremosa base americana con salsa y trozos de arandanos.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/MASCARPONE.png" alt="Mascarpone" class="img-fluid rounded">
+                    <h3>MASCARPONE</h3>
+                    <p>Base de queso mascarpone combinada con salsa de frutos rojos.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/MARACUYA.png" alt="Maracuya" class="img-fluid rounded">
+                    <h3>MARACUYA</h3>
+                    <p>Helado de maracuyá a la crema, con el exótico sabor tropical de la fruta.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/AMARENA.jpg.png" alt="Amarena" class="img-fluid rounded">
+                    <h3>AMARENA</h3>
+                    <p>Base americana con salsa de guindas ácidas.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/MOUSSE DE LIMON.png" alt="Mousse de Limon" class="img-fluid rounded">
+                    <h3>MOUSSE DE LIMON</h3>
+                    <p>Cremoso mousse de limón con un toque refrescante.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CREMA HIGOS.png" alt="Higos a la Crema" class="img-fluid rounded">
+                    <h3>HIGOS A LA CREMA</h3>
+                    <p>Helado cremoso con higos frescos y un toque dulce.</p>
                 </div>
 
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Super Dulce de leche</h2>
-                            <p class="card-text">Base de helado de dulce de leche con dulce de leche natural.</p>
-                        </div>
-                    </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/ANANA CHANTILLY.webp" alt="Anana Chantilly" class="img-fluid rounded">
+                    <h3>ANANA CHANTILLY</h3>
+                    <p>Helado cremoso con ananá y un toque de chantilly.</p>
                 </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Dulce de leche con nuez</h2>
-                            <p class="card-text">Base de helado de dulce de leche con nueces.</p>
-                        </div>
-                    </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/BANANA.jpg" alt="Banana" class="img-fluid rounded">
+                    <h3>BANANA</h3>
+                    <p>Cremoso helado de banana con sabor intenso y natural.</p>
                 </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Dulce de leche VIP</h2>
-                            <p class="card-text">Base de helado de dulce de leche con bombones de chocolate rellenos de dulce de leche.</p>
-                        </div>
-                    </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CEREZA .png" alt="Cerezas a la Crema" class="img-fluid rounded">
+                    <h3>CEREZAS A LA CREMA</h3>
+                    <p>Helado con cerezas frescas combinadas con crema dulce.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/FRUTILLA A LA CREMA.jpg" alt="Frutilla a la Crema" class="img-fluid rounded">
+                    <h3>FRUTILLA A LA CREMA</h3>
+                    <p>Helado cremoso con trozos de frutillas frescas y naturales.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CREMA VAINILLA.jpg" alt="Crema de Vainilla" class="img-fluid rounded">
+                    <h3>CREMA DE VAINILLA</h3>
+                    <p>Clásica crema de vainilla con un sabor suave y dulce.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CREMA RUSA.png" alt="Crema Rusa" class="img-fluid rounded">
+                    <h3>CREMA RUSA</h3>
+                    <p>Combinación de sambayón con otro licor y nueces crocantes.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/Tiramisu.jpg" alt="Tiramisu" class="img-fluid rounded">
+                    <h3>TIRAMISU</h3>
+                    <p>Crema moka combinada con sambayón y trozos de nueces.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/ALMENDRADO.jpg" alt="Almendrado" class="img-fluid rounded">
+                    <h3>ALMENDRADO</h3>
+                    <p>Base de crema de vainilla con almendras acarameladas.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/KINOTOS AL WHISKY.jpg" alt="Kinotos al Whisky" class="img-fluid rounded">
+                    <h3>KINOTOS AL WHISKY</h3>
+                    <p>Helado de crema con kinotos al whisky, perfecto para los amantes del licor.</p>
+                </div>
+                
+                <div class="col-md-3 text-center">
+                    <img src="../medios/FLAN.jpg" alt="Flan" class="img-fluid rounded">
+                    <h3>FLAN</h3>
+                    <p>Helado con base de flan y un toque de caramelo dulce.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/BAILEY.jpg" alt="Baileys" class="img-fluid rounded">
+                    <h3>BAILEYS</h3>
+                    <p>Crema helada con el delicioso toque del licor Baileys.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/NUTELLA.jpg" alt="Nutella" class="img-fluid rounded">
+                    <h3>NUTELLA</h3>
+                    <p>Helado cremoso con auténtica pasta de avellanas de Nutella.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/MANTECOL.jpg" alt="Mantecol" class="img-fluid rounded">
+                    <h3>MANTECOL</h3>
+                    <p>Helado con trozos reales de mantecol, una delicia tradicional.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CREMA OREO.jpg" alt="Crema Oreo" class="img-fluid rounded">
+                    <h3>CREMA OREO</h3>
+                    <p>Base de crema americana con trozos crujientes de galletas Oreo.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/PISTACHO.jpeg" alt="Pistacchio" class="img-fluid rounded">
+                    <h3>PISTACCHIO</h3>
+                    <p>Crema helada con salsa de pistacchio y auténticos pistacchios.</p>
                 </div>
             </div>
-       
+        </section>
+
+        <!-- Aquí puedes agregar más secciones para Chocolates, Dulce de Leche, etc. -->
+        <section id="chocolates" class="mb-5">
+            <h2>CHOCOLATES</h2>
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CHOCOLATE.png" alt="Chocolate" class="img-fluid rounded">
+                    <h3>CHOCOLATE</h3>
+                    <p>Delicioso helado de chocolate semi amargo, ideal para los amantes de lo clásico.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CHOCOLATE almendras.jpg" alt="Chocolate con Almendras" class="img-fluid rounded">
+                    <h3>CHOCOLATE CON ALMENDRAS</h3>
+                    <p>Helado de chocolate semi amargo con almendras crujientes.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CHOCOLATE CON PASAS.png" alt="Chocolate con Pasas al Rhum" class="img-fluid rounded">
+                    <h3>CHOCOLATE CON PASAS AL RHUM</h3>
+                    <p>Helado de chocolate con pasas bañadas en el licor rhum.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CHOCOLATE DE LA CASA.jpg" alt="Chocolate de la Casa" class="img-fluid rounded">
+                    <h3>CHOCOLATE DE LA CASA</h3>
+                    <p>Exquisito helado de chocolate amargo con una receta especial de la casa.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CHOCOLATE CON bariloche.png" alt="Chocolate Bariloche" class="img-fluid rounded">
+                    <h3>CHOCOLATE BARILOCHE</h3>
+                    <p>Helado de chocolate semi amargo con almendras acarameladas.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CHOCOLATE GRIEGO.jpg" alt="Chocolate Griego" class="img-fluid rounded">
+                    <h3>CHOCOLATE GRIEGO</h3>
+                    <p>Chocolate semi amargo con dulce de leche natural y nueces crocantes.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CHOCOLATE ITALIANO.png" alt="Chocolate Italiano" class="img-fluid rounded">
+                    <h3>CHOCOLATE ITALIANO</h3>
+                    <p>Helado de chocolate semi amargo con almendras bañadas en chocolate.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/ALFAJOR.jpg" alt="Alfajor" class="img-fluid rounded">
+                    <h3>ALFAJOR</h3>
+                    <p>Helado de chocolate semi amargo con pedazos de alfajor y dulce de leche natural.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CHOCOLATE BLANCO.jpg" alt="Chocolate Blanco" class="img-fluid rounded">
+                    <h3>CHOCOLATE BLANCO</h3>
+                    <p>Base de chocolate blanco con trozos de chocolate en rama blanco.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CHOCOLATE SUIZO.jpg" alt="Chocolate Suizo" class="img-fluid rounded">
+                    <h3>CHOCOLATE SUIZO</h3>
+                    <p>Base de dulce de leche combinada con chocolate y trozos de chocolate en rama blanco.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/MOUSSE DE CHOCOLATE.jpg" alt="Mousse de Chocolate" class="img-fluid rounded">
+                    <h3>MOUSSE DE CHOCOLATE</h3>
+                    <p>Chocolate suave con un toque de licor, ideal para paladares refinados.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CHOCOLATE MARROC.png" alt="Chocolate Marroc" class="img-fluid rounded">
+                    <h3>CHOCOLATE MARROC</h3>
+                    <p>Base de chocolate suave con trozos de Marroc, una delicia irresistible.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/CHOCOLATE ROCHER.png" alt="Chocolate Rocher" class="img-fluid rounded">
+                    <h3>CHOCOLATE ROCHER</h3>
+                    <p>Base de chocolate mezclada con crema de avellanas y una salsa de avellanas.</p>
+                </div>
+            </div>
+        </section>
+        <section id="al_agua" class="mb-5">
+            <h2>AL AGUA</h2>
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <img src="../medios/ANANA.jpg" alt="Anana" class="img-fluid rounded">
+                    <h3>ANANA</h3>
+                    <p>Refrescante helado de ananá con un sabor tropical.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/NARANJA.png" alt="Naranja" class="img-fluid rounded">
+                    <h3>NARANJA</h3>
+                    <p>Helado de naranja, perfecto para los amantes de los cítricos.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/LIMON.png" alt="Limon" class="img-fluid rounded">
+                    <h3>LIMON</h3>
+                    <p>Helado al agua con el toque ácido y refrescante del limón.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/LIMON GRANIZADO.png" alt="Limon Granizado" class="img-fluid rounded">
+                    <h3>LIMON GRANIZADO</h3>
+                    <p>Helado de limón con trozos de chocolate en rama negro.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/FRAMBUESA.jpg" alt="Frambuesa" class="img-fluid rounded">
+                    <h3>FRAMBUESA</h3>
+                    <p>Helado de frambuesa con un intenso sabor frutal.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/FRUTILLA.png" alt="Frutilla" class="img-fluid rounded">
+                    <h3>FRUTILLA</h3>
+                    <p>Helado fresco de frutilla, ideal para días calurosos.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/POMELO.png" alt="Pomelo" class="img-fluid rounded">
+                    <h3>POMELO</h3>
+                    <p>Helado al agua de pomelo con un toque cítrico único.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/MELON.png" alt="Melon" class="img-fluid rounded">
+                    <h3>MELON</h3>
+                    <p>Helado refrescante de melón, con sabor dulce y natural.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/PERA.jpg" alt="Pera" class="img-fluid rounded">
+                    <h3>PERA</h3>
+                    <p>Helado de pera con el auténtico sabor de la fruta.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/SANDIA.jpg" alt="Sandia" class="img-fluid rounded">
+                    <h3>SANDIA</h3>
+                    <p>Helado al agua de sandía, una opción refrescante y frutal.</p>
+                </div>
+            </div>
+        </section>
+        <section id="sambayones" class="mb-5">
+            <h2>SAMBAYONES</h2>
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <img src="../medios/SAMBAYON.png" alt="Sambayón" class="img-fluid rounded">
+                    <h3>SAMBAYÓN</h3>
+                    <p>Mezcla irresistible de huevo y licor, un clásico que encanta a todos.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/SAMBAYON CON NUECES.jpg" alt="Sambayón con Almendras" class="img-fluid rounded">
+                    <h3>SAMBAYÓN CON ALMENDRAS</h3>
+                    <p>Base de sambayón combinada con crujientes almendras.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/sambayon frutilla.webp" alt="Sambayón con Frutillas" class="img-fluid rounded">
+                    <h3>SAMBAYÓN CON FRUTILLAS</h3>
+                    <p>Base de sambayón enriquecida con trozos de frutillas frescas.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/SAMBAYON MALAGA.jpg" alt="Sambayón Málaga" class="img-fluid rounded">
+                    <h3>SAMBAYÓN MÁLAGA</h3>
+                    <p>Base de sambayón con pasas mojadas en rhum, una delicia sofisticada.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dulce_de_leches" class="mb-5">
+            <h2>DULCE DE LECHES</h2>
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <img src="../medios/dulce de leche.jpg" alt="Dulce de Leche" class="img-fluid rounded">
+                    <h3>DULCE DE LECHE</h3>
+                    <p>Clásico y delicioso helado de dulce de leche, perfecto para los amantes de lo tradicional.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/DDL GRANIZADO.png" alt="Dulce de Leche Granizado" class="img-fluid rounded">
+                    <h3>DULCE DE LECHE GRANIZADO</h3>
+                    <p>Base de dulce de leche con trozos de chocolate en rama negro, una combinación perfecta.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/DDL NUEZ.png" alt="Dulce de Leche con Nuez" class="img-fluid rounded">
+                    <h3>DULCE DE LECHE CON NUEZ</h3>
+                    <p>Base de dulce de leche con nueces crocantes para un sabor único.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/DDL VIP.jpg" alt="Dulce de Leche VIP" class="img-fluid rounded">
+                    <h3>DULCE DE LECHE VIP</h3>
+                    <p>Base de dulce de leche con bombones de chocolate rellenos de dulce de leche, un lujo irresistible.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/DDL SUPER.png" alt="Súper Dulce de Leche" class="img-fluid rounded">
+                    <h3>SÚPER DULCE DE LECHE</h3>
+                    <p>Base de dulce de leche enriquecida con dulce de leche natural para un sabor aún más intenso.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tortas_heladas" class="mb-5">
+            <h2>TORTAS HELADAS</h2>
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <img src="../medios/cereza.jpg" alt="Torta helada cerezas" class="img-fluid rounded">
+                    <h3>TORTA CEREZA</h3>
+                    <p>Bizcocho suave con crema de cerezas y cobertura de chocolate.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/frutilla torta.jpg" alt="Torta helada cerezas" class="img-fluid rounded">
+                    <h3>TORTA FRUTILLA</h3>
+                    <p>Bizcocho esponjoso con crema de frutillas y ganache de chocolate.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/lemon pie helado.webp" alt="Torta helada cerezas" class="img-fluid rounded">
+                    <h3>LEMON PIE</h3>
+                    <p>Base crujiente con crema de limón y suave merengue tostado.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="../medios/ALMENDRADO.jpg" alt="Torta helada cerezas" class="img-fluid rounded">
+                    <h3>ALMENDRADO</h3>
+                    <p>Helado cremoso con almendras caramelizadas y toque de canela.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+        
+
+
 </main>
 
 <footer class="bg-dark text-white text-center py-3 mt-auto">
@@ -185,5 +468,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

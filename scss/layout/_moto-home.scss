@@ -1,0 +1,66 @@
+// Estilo general para el contenedor
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+// Estilo para contenedores con posición relativa
+.position-relative {
+    position: relative;
+    overflow: hidden; // Asegura que el contenido no se salga del contenedor
+}
+
+// Texto superpuesto (overlay)
+.overlay-text-left {
+    position: absolute;
+    top: 50%; // Centra verticalmente
+    left: 10%; // Ajusta horizontalmente
+    transform: translateY(-50%);
+    background-color: rgba(222, 48, 109, 0.8); // Fondo rosa semi-transparente
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 400px; // Ancho máximo del bloque de texto
+    text-align: left;
+    z-index: 10; // Asegura que el texto esté encima de la imagen
+
+    // Estilos para el título
+    h2.section-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    // Estilos para el párrafo
+    p.section-text {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    // Estilos para el botón
+    a.btn-custom {
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        border: 2px solid white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: white;
+            color: #DE306D;
+        }
+    }
+
+    // Ajustes para pantallas pequeñas
+    @media (max-width: 576px) {
+        top: 50%; // Centra verticalmente en móviles
+        left: 50%; // Centra horizontalmente en móviles
+        transform: translate(-50%, -50%); // Ajusta para centrar completamente
+        width: 90%; // Ocupa el 90% del ancho en móviles
+        max-width: none; // Sin límite de ancho
+        padding: 1.5rem; // Reduce el padding
+        text-align: center; // Centra el texto
+    }
+}

@@ -1,0 +1,40 @@
+.resumen-wrapper {
+    border-radius: 10px;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 800px; // Mantiene el ancho máximo del contenedor principal
+    h2,
+    h3 {
+        font-family: 'Alternate Gothic Cond ATF Bold', sans-serif; // Fuente igual al título
+        font-weight: bold;
+        text-transform: uppercase; // Mayúsculas
+        color: #DE306D; // Color destacado
+        line-height: 1.2;
+        margin-bottom: 20px; // Separación inferior
+    }
+
+    h3 {
+        font-size: 1.8rem; // Tamaño más pequeño para h3
+        color: #333; // Color más oscuro
+        margin-bottom: 15px; // Menor separación que h2
+    }}
+
+
+/* Estilo para centrar el contenedor y subrayar el texto */
+.dudas {
+    display: flex; /* Activa Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-align: center; /* Alinea el texto dentro del párrafo */
+    height: 150px; /* Ajusta la altura según sea necesario */
+    margin: 20px auto; /* Centra el contenedor en el eje horizontal */
+}
+
+.dudas p {
+    text-decoration: underline; /* Subraya todo el texto */
+    font-size: 1.2rem; /* Tamaño del texto */
+    margin: 0; /* Elimina márgenes internos del párrafo */
+}
+
+
+
